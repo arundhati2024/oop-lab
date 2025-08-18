@@ -1,0 +1,49 @@
+Enter number of teachers: 2
+
+--- For Teacher 1 ---
+Enter your name: Alice
+Enter your ID: 101
+Enter your department: Mathematics
+Enter your role: Lecturer
+Enter your section: A
+
+--- For Teacher 2 ---
+Enter your name: Bob
+Enter your ID: 102
+Enter your department: Science
+Enter your role: Assistant
+Enter your section: B
+
+--- Displaying Teachers ---
+--- Staff Details ---
+Name: Alice
+Employee ID: 101
+Department: Mathematics
+Role: Lecturer
+Section: A
+
+--- Staff Details ---
+Name: Bob
+Employee ID: 102
+Department: Science
+Role: Assistant
+Section: B
+
+*****************************************
+
+Enter number of supporting staff: 1
+
+--- For Supporting Staff 1 ---
+Enter your name: Carol
+Enter your ID: 201
+Enter your department: Administration
+Enter area of support: Library
+
+--- Displaying Supporting Staff ---
+--- Staff Details ---
+Name: Carol
+Employee ID: 201
+Department: Administration
+Area of support: Library
+
+************************************** 
