@@ -1,0 +1,99 @@
+#include<iostream>
+using namespace std;
+
+class Employee {
+private:
+    string name, add, depart;
+    int id, date, num;
+    static int totalEmployees;
+
+public:
+    // Parameterized Constructor
+    Employee(string a, string b, string c, int x, int y, int z) {
+        name = a;
+        add = b;
+        depart = c;
+        id = x;
+        date = y;
+        num = z;
+        totalEmployees++;
+        cout << "HI I AM PARAMETERIZED CONSTRUCTOR \n";
+    }
+
+    // Default Constructor
+    Employee() {
+        name = "Arundhati Nath";
+        add = "Pune";
+        depart = "CS";
+        id = 876767;
+        date = 1122006; // Corrected date format
+        num = 9876342;
+        totalEmployees++;
+        cout << "HI I AM DEFAULT CONSTRUCTOR \n";
+    }
+
+    // Copy Constructor
+    Employee(const Employee &emp) {
+        name = emp.name;
+        add = emp.add;
+        depart = emp.depart;
+        id = emp.id;
+        date = emp.date;
+        num = emp.num;
+        totalEmployees++;
+        cout << "HI I AM COPY CONSTRUCTOR \n";
+    }
+
+    // Destructor
+    ~Employee() {
+        cout << "Number of objects destroyed " << totalEmployees << endl;
+        totalEmployees--;
+    }
+
+    // Function to display employee details
+    void display() const {
+        cout << "\n--- Employee Details ---\n";
+        cout << "Name: " << name << endl;
+        cout << "Employee ID: " << id << endl;
+        cout << "Department: " << depart << endl;
+        cout << "Date of Joining: " << date << endl;
+        cout << "Contact Address: " << add << endl;
+        cout << "Telephone Number: " << num << endl;
+        cout << "Total employees created: " << totalEmployees << endl;
+    }
+
+    // Static function to get total employees
+    static int getTotalEmployees() {
+        return totalEmployees;
+    }
+};
+
+// Initialize static member
+int Employee::totalEmployees = 0;
+
+int main() {
+    // Corrected object instantiation
+    Employee obj1; // Default constructor
+    obj1.display();
+
+    cout << "\n";
+
+    Employee obj2("Chloe", "IT", "Pune", 8474, 75465, 74746498); // Parameterized constructor
+    obj2.display();
+
+    cout << "\n";
+
+    Employee obj3(obj2); // Copy constructor
+    obj3.display();
+
+    cout << "\n";
+
+    // Dynamically allocate memory for an employee
+    Employee* ptr = new Employee("Chloe", "IT", "Pune", 8474, 75465, 74746498);
+    ptr->display();
+    delete ptr; // Free the dynamically allocated memory
+
+    
+
+    return 0;
+}
