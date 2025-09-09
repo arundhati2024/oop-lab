@@ -1,0 +1,54 @@
+#include<iostream>
+using namespace std;
+
+class shape{
+	public:
+	int x,y,z;
+    public:	
+	void getdata();
+
+	virtual void display()=0;
+	};
+	void shape::getdata()
+	{
+		cout<<"\n enter length: (cm)"<<endl;
+		cin>>x;
+		cout<<"enter breadth : (cm)"<<endl;
+		cin>>y;
+		cout<<"enter height (cm)"<<endl;
+		cin>>z;
+		}
+		
+	class triangle:public shape
+	{
+		int res=0;
+		
+		void display()
+		{
+			res=0.5*x*z;
+			cout<<"area of triangle is ="<<res<<"cm"<<endl;
+		}
+	};
+	class rectangle:public shape
+	{
+		int res=0;
+		
+		void display()
+		{
+			res=x*y;
+			cout<<"area of rectangle is = "<<res<<"cm"<<endl;
+			}
+		};
+	int main()
+	{
+		shape*st;
+		triangle t;
+		st=&t;
+		st->getdata();
+		st->display();
+		rectangle r;
+		st=&r;
+		st->getdata();
+		st->display();
+		return 0;
+		}
