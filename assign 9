@@ -1,0 +1,45 @@
+#include <iostream> 
+#include <map> 
+#include <string> 
+using namespace std; 
+// Function to display all students 
+void displayStudents(const map<string, string> &students) { 
+cout << "\nList of Students:\n"; 
+    for (auto &entry : students) { 
+        cout << "PRN: " << entry.first << " -> Name: " << entry.second << endl; 
+    } 
+} 
+// Function to search student by PRN 
+void searchStudent(const map<string, string> &students) { 
+    string prn; 
+    cout << "\nEnter PRN to search: "; 
+    cin >> prn; 
+    auto it = students.find(prn); 
+    if (it != students.end()) { 
+        cout << "Student Found!\nName: " << it->second << endl; 
+    } else { 
+        cout << "No student found with PRN: " << prn << endl; 
+    } 
+} 
+int main() { 
+    // Map to store PRN and student name 
+    map<string, string> students; 
+    int n; 
+    cout << "Enter number of students: "; 
+    cin >> n; 
+    // Input student data 
+    for (int i = 0; i < n; i++) { 
+        string prn, name; 
+        cout << "\nEnter PRN of student " << i + 1 << ": "; 
+        cin >> prn; 
+        cout << "Enter Name of student " << i + 1 << ": "; 
+        cin.ignore(); // clear input buffer 
+        getline(cin, name); 
+        students[prn] = name; 
+    } 
+// Display all students 
+displayStudents(students); 
+// Search for a student 
+searchStudent(students); 
+return 0; 
+}
